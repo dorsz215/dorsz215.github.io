@@ -1,1 +1,55 @@
 # dorsz215.github.io
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>FreeGames.Cod</title>
+
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: Arial;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 40px;
+      margin: 20px;
+    }
+
+    .game {
+      border: 2px solid white;
+      padding: 15px;
+      margin: 15px auto;
+      width: 250px;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+
+    .game:hover {
+      background: #222;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="title">FreeGames.Cod</div>
+
+  <div class="game" onclick="play('https://turbowarp.org/123/fullscreen')">
+    Cod Run
+  </div>
+
+  <div class="game" onclick="play('https://turbowarp.org/456/fullscreen')">
+    Paper Minecraft (Favorite)
+  </div>
+
+  <script>
+    function play(url) {
+      window.open(url, "_blank");
+    }
+  </script>
+
+</body>
+</html>
