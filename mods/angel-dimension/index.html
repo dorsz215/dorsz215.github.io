@@ -8,7 +8,7 @@
     <title>Angiel Dimensions</title>
 
     <meta name="description" content="Angiel Dimensions — Explore a brand-new dimension filled with new possibilities and future content.">
-    <meta name="theme-color" content="#15151f">
+    <meta name="theme-color" content="#0b0b12">
 
     <style>
         * {
@@ -86,6 +86,8 @@
             margin: auto;
         }
 
+        /* BUTTONS */
+
         .hero-buttons {
             margin-top: 35px;
             display: flex;
@@ -106,13 +108,15 @@
             box-shadow: 0 0 30px rgba(110, 92, 255, 0.25);
         }
 
-        .button.secondary {
-            border: 1px solid #30303e;
-            background: #15151f;
+        .button.modrith {
+            background: #35c759;
+            color: #071008;
+            box-shadow: 0 0 30px rgba(53, 199, 89, 0.20);
         }
 
         .button:hover {
             transform: translateY(-3px);
+            filter: brightness(1.08);
         }
 
         /* SECTIONS */
@@ -242,8 +246,11 @@
 
 <body>
 
+    <!-- HERO -->
+
     <header>
         <div class="hero">
+
             <div class="badge">Early Beta</div>
 
             <h1>Angiel Dimensions</h1>
@@ -254,25 +261,38 @@
             </p>
 
             <div class="hero-buttons">
+
                 <a href="#available" class="button primary">
                     Explore the Mod
                 </a>
 
-                <a href="#coming-soon" class="button secondary">
-                    What's Coming
+                <!--
+                    Replace the URL below with your actual Modrith project URL.
+                -->
+                <a
+                    href="https://modrinth.com/mod/angel-dimensions-beta"
+                    class="button modrith"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    View on Modrith
                 </a>
+
             </div>
         </div>
     </header>
 
+
     <main>
 
-        <!-- CURRENT CONTENT -->
+        <!-- CURRENTLY AVAILABLE -->
 
         <section id="available">
             <div class="container">
 
-                <h2 class="section-title">Currently Available</h2>
+                <h2 class="section-title">
+                    Currently Available
+                </h2>
 
                 <p class="section-description">
                     The first beta already introduces the foundation of
@@ -283,25 +303,33 @@
 
                     <div class="card">
                         <div class="icon">◆</div>
+
                         <h3>New Dimension</h3>
+
                         <p>
                             A brand-new dimension with custom world generation
                             and its own unique environment.
                         </p>
                     </div>
 
+
                     <div class="card">
                         <div class="icon">✦</div>
+
                         <h3>Unique Igniter</h3>
+
                         <p>
                             Discover a unique Igniter used to access the
                             Angiel dimension.
                         </p>
                     </div>
 
+
                     <div class="card">
                         <div class="icon">↗</div>
+
                         <h3>Future Progression</h3>
+
                         <p>
                             A custom progression system designed to expand
                             with future updates.
@@ -310,20 +338,26 @@
 
                 </div>
 
+
                 <div class="requirement">
+
                     <strong>Required:</strong>
                     ColoredWater 1.1.2
+
                 </div>
 
             </div>
         </section>
+
 
         <!-- COMING SOON -->
 
         <section id="coming-soon">
             <div class="container">
 
-                <h2 class="section-title">Coming Soon</h2>
+                <h2 class="section-title">
+                    Coming Soon
+                </h2>
 
                 <p class="section-description">
                     Angiel Dimensions is actively being developed.
@@ -331,63 +365,84 @@
                     with more content and gameplay mechanics.
                 </p>
 
+
                 <div class="grid">
 
                     <div class="card">
                         <div class="icon">◇</div>
+
                         <h3>New Biomes</h3>
+
                         <p>
                             Discover new environments and unique landscapes.
                         </p>
                     </div>
 
+
                     <div class="card">
                         <div class="icon">◆</div>
+
                         <h3>New Ores</h3>
+
                         <p>
                             New resources to discover and use throughout
                             your progression.
                         </p>
                     </div>
 
+
                     <div class="card">
                         <div class="icon">⬡</div>
+
                         <h3>New Materials</h3>
+
                         <p>
                             More materials will expand crafting and progression.
                         </p>
                     </div>
 
+
                     <div class="card">
                         <div class="icon">⚒</div>
+
                         <h3>New Tools</h3>
+
                         <p>
                             New tools designed around the dimension's
                             future progression.
                         </p>
                     </div>
 
+
                     <div class="card">
                         <div class="icon">⬢</div>
+
                         <h3>New Armor Sets</h3>
+
                         <p>
                             New armor sets will provide additional progression
                             and customization.
                         </p>
                     </div>
 
+
                     <div class="card">
                         <div class="icon">▣</div>
+
                         <h3>New Structures</h3>
+
                         <p>
                             More structures and world features will appear
                             throughout the dimension.
                         </p>
                     </div>
 
+
                     <div class="card">
                         <div class="icon">+</div>
+
                         <h3>More Content</h3>
+
                         <p>
                             More gameplay mechanics, features and surprises
                             are planned for future versions.
@@ -399,14 +454,18 @@
             </div>
         </section>
 
+
         <!-- DISCLAIMER -->
 
         <section>
+
             <div class="container">
 
                 <div class="disclaimer">
 
-                    <h2>Disclaimer</h2>
+                    <h2>
+                        Disclaimer
+                    </h2>
 
                     <p>
                         This mod is currently in the testing phase of its
@@ -432,14 +491,20 @@
                 </div>
 
             </div>
+
         </section>
 
     </main>
 
+
+    <!-- FOOTER -->
+
     <footer>
+
         <div class="container">
             © 2026 Angiel Dimensions · Early Beta
         </div>
+
     </footer>
 
 </body>
