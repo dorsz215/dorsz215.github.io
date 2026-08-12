@@ -1,0 +1,447 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Angiel Dimensions</title>
+
+    <meta name="description" content="Angiel Dimensions — Explore a brand-new dimension filled with new possibilities and future content.">
+    <meta name="theme-color" content="#15151f">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at 50% -10%, #393060 0%, transparent 45%),
+                #0b0b12;
+            color: #f2f2f7;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1100px, 90%);
+            margin: auto;
+        }
+
+        /* HERO */
+
+        header {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero {
+            max-width: 850px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 7px 14px;
+            border: 1px solid #6e5cff;
+            border-radius: 999px;
+            color: #aaa0ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            background: rgba(110, 92, 255, 0.08);
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 1;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #ffffff, #9d91ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #aaaab8;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 13px 22px;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.2s ease;
+        }
+
+        .button.primary {
+            background: #6e5cff;
+            box-shadow: 0 0 30px rgba(110, 92, 255, 0.25);
+        }
+
+        .button.secondary {
+            border: 1px solid #30303e;
+            background: #15151f;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+        }
+
+        .section-description {
+            color: #9292a2;
+            margin-bottom: 35px;
+        }
+
+        /* CARDS */
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            background: rgba(21, 21, 31, 0.8);
+            border: 1px solid #292936;
+            border-radius: 16px;
+            padding: 25px;
+            transition: 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: #5147a8;
+            background: #181823;
+        }
+
+        .card h3 {
+            margin-bottom: 8px;
+            font-size: 1.15rem;
+        }
+
+        .card p {
+            color: #9292a2;
+            font-size: 0.95rem;
+        }
+
+        .icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(110, 92, 255, 0.12);
+            color: #9d91ff;
+            margin-bottom: 18px;
+            font-size: 20px;
+        }
+
+        /* REQUIREMENT */
+
+        .requirement {
+            margin-top: 35px;
+            padding: 20px 24px;
+            border-radius: 14px;
+            border: 1px solid #403978;
+            background: rgba(110, 92, 255, 0.08);
+            color: #d7d3ff;
+        }
+
+        .requirement strong {
+            color: #a79dff;
+        }
+
+        /* DISCLAIMER */
+
+        .disclaimer {
+            border: 1px solid #493f26;
+            background: rgba(110, 92, 255, 0.03);
+            border-radius: 16px;
+            padding: 30px;
+        }
+
+        .disclaimer h2 {
+            margin-bottom: 12px;
+        }
+
+        .disclaimer p {
+            color: #9999a8;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid #20202b;
+            padding: 30px 0;
+            color: #666675;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 600px) {
+            header {
+                min-height: 65vh;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="hero">
+            <div class="badge">Early Beta</div>
+
+            <h1>Angiel Dimensions</h1>
+
+            <p>
+                Explore a brand-new dimension filled with new possibilities
+                and future content.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#available" class="button primary">
+                    Explore the Mod
+                </a>
+
+                <a href="#coming-soon" class="button secondary">
+                    What's Coming
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- CURRENT CONTENT -->
+
+        <section id="available">
+            <div class="container">
+
+                <h2 class="section-title">Currently Available</h2>
+
+                <p class="section-description">
+                    The first beta already introduces the foundation of
+                    Angiel Dimensions.
+                </p>
+
+                <div class="grid">
+
+                    <div class="card">
+                        <div class="icon">◆</div>
+                        <h3>New Dimension</h3>
+                        <p>
+                            A brand-new dimension with custom world generation
+                            and its own unique environment.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">✦</div>
+                        <h3>Unique Igniter</h3>
+                        <p>
+                            Discover a unique Igniter used to access the
+                            Angiel dimension.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">↗</div>
+                        <h3>Future Progression</h3>
+                        <p>
+                            A custom progression system designed to expand
+                            with future updates.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="requirement">
+                    <strong>Required:</strong>
+                    ColoredWater 1.1.2
+                </div>
+
+            </div>
+        </section>
+
+        <!-- COMING SOON -->
+
+        <section id="coming-soon">
+            <div class="container">
+
+                <h2 class="section-title">Coming Soon</h2>
+
+                <p class="section-description">
+                    Angiel Dimensions is actively being developed.
+                    Future updates are planned to expand the dimension
+                    with more content and gameplay mechanics.
+                </p>
+
+                <div class="grid">
+
+                    <div class="card">
+                        <div class="icon">◇</div>
+                        <h3>New Biomes</h3>
+                        <p>
+                            Discover new environments and unique landscapes.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">◆</div>
+                        <h3>New Ores</h3>
+                        <p>
+                            New resources to discover and use throughout
+                            your progression.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">⬡</div>
+                        <h3>New Materials</h3>
+                        <p>
+                            More materials will expand crafting and progression.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">⚒</div>
+                        <h3>New Tools</h3>
+                        <p>
+                            New tools designed around the dimension's
+                            future progression.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">⬢</div>
+                        <h3>New Armor Sets</h3>
+                        <p>
+                            New armor sets will provide additional progression
+                            and customization.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">▣</div>
+                        <h3>New Structures</h3>
+                        <p>
+                            More structures and world features will appear
+                            throughout the dimension.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">+</div>
+                        <h3>More Content</h3>
+                        <p>
+                            More gameplay mechanics, features and surprises
+                            are planned for future versions.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- DISCLAIMER -->
+
+        <section>
+            <div class="container">
+
+                <div class="disclaimer">
+
+                    <h2>Disclaimer</h2>
+
+                    <p>
+                        This mod is currently in the testing phase of its
+                        first beta version.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Some features may be missing, unfinished, experimental,
+                        or may not work as intended. More content, fixes,
+                        improvements, and changes will be introduced in future
+                        versions.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        The project is currently in an early stage of
+                        development, so many things are still subject to change.
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            © 2026 Angiel Dimensions · Early Beta
+        </div>
+    </footer>
+
+</body>
+</html>
+```
