@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dorsz's Sandwiches</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #111318;
+            color: #f1f1f1;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(17, 19, 24, 0.95);
+            border-bottom: 1px solid #292d36;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 18px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #e3a84b;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #b8bcc6;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+            background:
+                radial-gradient(circle at center, #242832 0%, #111318 65%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            margin-bottom: 18px;
+            letter-spacing: -3px;
+        }
+
+        .hero h1 span {
+            color: #e3a84b;
+        }
+
+        .hero p {
+            color: #b8bcc6;
+            font-size: 1.2rem;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .buttons {
+            margin-top: 32px;
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 13px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.2s;
+            border: 1px solid #343944;
+        }
+
+        .button-primary {
+            background: #e3a84b;
+            color: #17130d;
+            border-color: #e3a84b;
+        }
+
+        .button-primary:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.08);
+        }
+
+        .button-secondary {
+            background: #1c2028;
+            color: #ffffff;
+        }
+
+        .button-secondary:hover {
+            background: #292e38;
+            transform: translateY(-2px);
+        }
+
+        /* GENERAL */
+
+        section {
+            padding: 90px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 14px;
+        }
+
+        .section-description {
+            color: #9da2ad;
+            margin-bottom: 40px;
+        }
+
+        /* FEATURES */
+
+        .features {
+            background: #15181e;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .feature {
+            background: #1b1f27;
+            border: 1px solid #292e38;
+            border-radius: 12px;
+            padding: 28px;
+            transition: 0.2s;
+        }
+
+        .feature:hover {
+            transform: translateY(-4px);
+            border-color: #3b414d;
+        }
+
+        .feature h3 {
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+        }
+
+        .feature p {
+            color: #9da2ad;
+        }
+
+        /* CONTENT */
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .content-card {
+            background: #1b1f27;
+            border: 1px solid #292e38;
+            border-radius: 12px;
+            padding: 28px;
+        }
+
+        .content-card h3 {
+            margin-bottom: 16px;
+        }
+
+        .content-card ul {
+            list-style: none;
+        }
+
+        .content-card li {
+            padding: 7px 0;
+            color: #b8bcc6;
+        }
+
+        .content-card li::before {
+            content: "•";
+            color: #e3a84b;
+            margin-right: 10px;
+        }
+
+        /* VERSION */
+
+        .version {
+            background: #15181e;
+        }
+
+        .version-box {
+            background: #1b1f27;
+            border: 1px solid #292e38;
+            border-radius: 14px;
+            padding: 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .version-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .version-info p {
+            color: #9da2ad;
+        }
+
+        .badge {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            border-radius: 6px;
+            background: #292e38;
+            color: #d7d9de;
+            font-size: 0.85rem;
+        }
+
+        /* ABOUT */
+
+        .about {
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: auto;
+            color: #aeb2bb;
+            font-size: 1.05rem;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid #292d36;
+            padding: 35px 20px;
+            text-align: center;
+            color: #777d88;
+            background: #0d0f13;
+        }
+
+        footer strong {
+            color: #bfc3ca;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 800px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .version-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                Dorsz's <span>Sandwiches</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#content">Content</a></li>
+                <li><a href="#version">Version</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <header class="hero">
+        <div class="hero-content">
+
+            <h1>Dorsz's <span>Sandwiches</span></h1>
+
+            <p>
+                A small Minecraft food mod focused on adding new sandwiches,
+                ingredients, and useful tools to your survival world.
+            </p>
+
+            <div class="buttons">
+                <a class="button button-primary" href="#version">
+                    Download
+                </a>
+
+                <a class="button button-secondary" href="#content">
+                    Explore Mod
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- FEATURES -->
+
+    <section class="features" id="features">
+        <div class="container">
+
+            <h2 class="section-title">Features</h2>
+
+            <p class="section-description">
+                Simple additions designed to fit naturally into Minecraft survival.
+            </p>
+
+            <div class="feature-grid">
+
+                <div class="feature">
+                    <h3>🥪 More Sandwiches</h3>
+                    <p>
+                        Create new sandwiches using different ingredients
+                        and recipes.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <h3>🧀 New Ingredients</h3>
+                    <p>
+                        Add new food ingredients such as cheese, ham,
+                        and berry jam.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <h3>🔪 Useful Tools</h3>
+                    <p>
+                        Use tools like the knife to prepare your ingredients
+                        and sandwiches.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- CONTENT -->
+
+    <section id="content">
+        <div class="container">
+
+            <h2 class="section-title">What's Included?</h2>
+
+            <p class="section-description">
+                Everything currently included in the mod.
+            </p>
+
+            <div class="content-grid">
+
+                <div class="content-card">
+                    <h3>Sandwiches</h3>
+
+                    <ul>
+                        <li>Cheese Sandwich</li>
+                        <li>Ham N Cheese Sandwich</li>
+                        <li>Double Bread Jam Sandwich</li>
+                    </ul>
+                </div>
+
+                <div class="content-card">
+                    <h3>Ingredients</h3>
+
+                    <ul>
+                        <li>Cheese</li>
+                        <li>Berry Jam</li>
+                        <li>Ham</li>
+                    </ul>
+                </div>
+
+                <div class="content-card">
+                    <h3>Tools</h3>
+
+                    <ul>
+                        <li>Knife</li>
+                    </ul>
+                </div>
+
+                <div class="content-card">
+                    <h3>Survival Friendly</h3>
+
+                    <ul>
+                        <li>Vanilla-friendly gameplay</li>
+                        <li>Simple recipes</li>
+                        <li>Food-focused additions</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- VERSION -->
+
+    <section class="version" id="version">
+        <div class="container">
+
+            <h2 class="section-title">Latest Version</h2>
+
+            <p class="section-description">
+                Get the latest release of Dorsz's Sandwiches.
+            </p>
+
+            <div class="version-box">
+
+                <div class="version-info">
+                    <h3>Dorsz's Sandwiches 0.0.1</h3>
+
+                    <p>
+                        First public release.
+                    </p>
+
+                    <span class="badge">
+                        Latest Release
+                    </span>
+                </div>
+
+                <!-- CHANGE THIS LINK -->
+                <a
+                    class="button button-primary"
+                    href="#"
+                    target="_blank"
+                >
+                    Download
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about">
+        <div class="container">
+
+            <h2 class="section-title">
+                More Sandwiches. More Flavor.
+            </h2>
+
+            <p>
+                Dorsz's Sandwiches expands Minecraft's food selection
+                with simple, fun, and survival-friendly sandwich recipes.
+                More sandwiches. More ingredients. More ways to make
+                your survival food better.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        <p>
+            <strong>Dorsz's Sandwiches</strong> —
+            Made for Minecraft survival.
+        </p>
+
+        <p>
+            © 2026 Dorsz215
+        </p>
+    </footer>
+
+</body>
+</html>
